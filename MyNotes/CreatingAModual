@@ -1,0 +1,9 @@
+# Creating a Modual
+
+```bash
+go mod init github.com/chris/go-tasks
+```
+
+this creates a `go.mod` file which is the equivelent to a package.json. Starts with the github url and teh go versrion.
+
+The very first file and entry point in a Go program is the main.go.
