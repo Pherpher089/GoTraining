@@ -1,6 +1,9 @@
 package models
 
-import "time"
+import (
+	"fmt"
+	"time"
+)
 
 type Priority string
 
@@ -18,3 +21,6 @@ type Task struct {
 	Priority	Priority	`json:"priority"`
 	CreatedAt	time.Time	`json:"created_at"`
 }
+
+func (t *Task) Complete() { t.Done = true}
+func (t Task) String() string { return fmt.Sprintf("[%d] %s", t.ID, t.Title)}

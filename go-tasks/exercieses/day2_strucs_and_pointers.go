@@ -8,11 +8,7 @@
 
 package main
 
-import (
-	"fmt"
-	"time"
-)
-
+/*
 // -----------------------------------------------------------------
 // These types are defined at the package level (outside any function)
 // -----------------------------------------------------------------
@@ -51,7 +47,7 @@ func main() {
 
 	// TODO: Create a Task using named fields (recommended style):
 	var task = Task{ID: 1, Title: "Buy milk", Description: "Buy milk from the store", Done: false, Priority: "Medium", CreatedAt: time.Now()}
-	
+
 	// TODO: Print the whole struct, then print Title, Priority, and Done separately
 	fmt.Println(task)
 	fmt.Println("Title: ", task.Title)
@@ -75,7 +71,7 @@ func main() {
 	// TODO: Create an empty Task with no fields set
 	var emptyTask = Task{}
 	fmt.Println(emptyTask)
-	
+
 	fmt.Println()
 
 	// -----------------------------------------------------------------
@@ -261,3 +257,4 @@ func markDoneByPointer(t *Task) {
 // func updatePriority(t *Task, p Priority) {
 // 	t.Priority = p
 // }
+*/

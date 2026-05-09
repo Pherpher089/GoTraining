@@ -1,12 +1,12 @@
-// // Day 1 Exercise: Arrays & Slices
-// //
-// // Run this file with: go run exercises/day1_slices.go
-// // (from inside the go-tasks folder after you've initialized the module)
-// //
-// // Work through each TODO. The expected output is shown in comments above each section.
-// // Uncomment the answer blocks at the bottom to check your work.
+// Day 1 Exercise: Arrays & Slices
+//
+// Run this file with: go run exercises/day1_slices.go
+// (from inside the go-tasks folder after you've initialized the module)
+//
+// Work through each TODO. The expected output is shown in comments above each section.
+// Uncomment the answer blocks at the bottom to check your work.
 
-// package main
+package main
 
 // import "fmt"
 
@@ -122,11 +122,8 @@
 
 // 	fmt.Println("--- Part 4: Slice of structs ---")
 
-
-
 // 	// TODO: Create a slice of Task structs with 3 tasks (all Done: false)
 // 	todos := []Task{{"Buy milk", false}, {"Learn go", true}, {"Walk dog", false}}
-
 
 // 	// TODO: Print each task
 // 	for _, t := range todos {
@@ -136,15 +133,13 @@
 // 	// TODO: Count how many tasks have Done == true and print the count
 // 	var count int = 0;
 
-// 	for _, t := range todos{ 
+// 	for _, t := range todos{
 // 		if t.Done {
 // 			count++
 // 		}
 // 	}
 
 // 	fmt.Println("Completed tasks ", count)
-
-
 
 // 	fmt.Println()
 
@@ -160,8 +155,6 @@
 
 // 	fmt.Println("--- Part 5: Challenge ---")
 // 	// Your code here...
-
-	
 
 // 	fmt.Println(filterDone(todos))
 // 	fmt.Println("=== Done! Uncomment the answer section below to check your work ===")
