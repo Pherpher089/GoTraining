@@ -11,6 +11,7 @@
 
 package main
 
+/*
 import (
 	"fmt"
 	"strings"
@@ -181,7 +182,7 @@ func (m *MemoryStore) GetById(id int) (*Task, bool) {
 // =============================================================================
 
 func (m *MemoryStore) RemoveById(id int) {
-	tasks := []Task{} 
+	tasks := []Task{}
 	for _, val := range m.tasks { if val.ID != id { tasks = append(tasks, val)}}
 	m.tasks = tasks
 }
@@ -263,7 +264,7 @@ func main() {
 	fmt.Println("high is valid: ", highIsValid)
 	fmt.Println("urgent is valid: ", urgentIsValid)
 
-	
+
 	// TODO: Call Label() on High and Medium, print results
 	fmt.Println("Medium label: ", Priority(Medium).Label())
 	fmt.Println("High label: ", Priority(High).Label())
@@ -395,3 +396,4 @@ func main() {
 // Suppress unused import warning if Parts 1/2 are still commented out
 var _ = strings.Contains
 var _ = time.Now
+*/
