@@ -200,6 +200,41 @@ func describe(i interface{}) {
 }
 
 // =============================================================================
+// PART 6: Challenge — FilterStore
+// =============================================================================
+
+type FilterStore struct {
+	store TaskStore
+}
+
+type TaggableStore interface {
+	TaskStore
+	GetByTag(tag string) []Task
+}
+
+func NewFilterStore(s TaskStore) *FilterStore {
+	return &FilterStore{store: s}
+}
+
+func (f *FilterStore) Add(t Task) Task              { return f.store.Add(t) }
+func (f *FilterStore) GetAll() []Task               { return f.store.GetAll() }
+func (f *FilterStore) GetByID(id int) (*Task, bool) { return f.store.GetByID(id) }
+func (f *FilterStore) Delete(id int) bool           { return f.store.Delete(id) }
+func (f *FilterStore) Count() int                   { return f.store.Count() }
+func (f *FilterStore) GetByTag(tag string) []Task {
+	tasksWithTag := []Task{}
+	for _, task := range f.store.GetAll() {
+		for _, t := range task.Tags {
+			if t == tag {
+				tasksWithTag = append(tasksWithTag, task)
+				break
+			}
+		}
+	}
+	return tasksWithTag
+}
+
+// =============================================================================
 
 func main() {
 	fmt.Println("=== Day 4: Interfaces ===")
@@ -296,21 +331,19 @@ func main() {
 	// -----------------------------------------------------------------------
 	// 1. Create a second store type called FilterStore that wraps a TaskStore
 	//    and adds a GetByTag(tag string) []Task method.
-	//
-	// 2. Define a new interface called TaggableStore that embeds TaskStore
-	//    and adds GetByTag.
-	//
-	// 3. Implement GetByTag on FilterStore by iterating over store.GetAll()
-	//    and returning tasks whose Tags slice contains the given tag.
-	//
-	// Hint for embedding interfaces:
-	//   type TaggableStore interface {
-	//       TaskStore                    // embed — inherits all TaskStore methods
-	//       GetByTag(tag string) []Task  // adds one more
-	//   }
-
+	
 	fmt.Println("--- Part 6: Challenge ---")
-	// Your code here...
+
+	// Create a FilterStore wrapping a MemoryStore
+	var tagStore TaggableStore = NewFilterStore(NewMemoryStore())
+	tagStore.Add(Task{ID: 1, Title: "Write tests", Tags: []string{"go", "testing"}})
+	tagStore.Add(Task{ID: 2, Title: "Fix bug", Tags: []string{"go"}})
+	tagStore.Add(Task{ID: 3, Title: "Design UI", Tags: []string{"frontend"}})
+
+	fmt.Println("Tasks tagged 'go':")
+	for _, t := range tagStore.GetByTag("go") {
+		fmt.Printf("  [%d] %s\n", t.ID, t.Title)
+	}
 
 	fmt.Println()
 	fmt.Println("=== Done! Check the answers below ===")
