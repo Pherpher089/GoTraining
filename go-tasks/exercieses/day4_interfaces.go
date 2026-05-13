@@ -12,6 +12,7 @@
 
 package main
 
+/*
 import (
 	"fmt"
 	"strings"
@@ -188,7 +189,7 @@ func describe(i interface{}) {
 	//   default → "Got something else"
 
 	switch v := i.(type) {
-	case int: 
+	case int:
 		fmt.Println("Got an int: ", v)
 	case string:
 		fmt.Println("Got a string: ", v)
@@ -285,12 +286,12 @@ func main() {
 	// TODO: Add three tasks
 	newStore.Add(Task{ID: 0, Title: "Write tests", Priority: High })
 	newStore.Add(Task{ID: 1, Title: "Fix bug", Priority: Low})
-	newStore.Add(Task{ID: 2, Title: "Deploy app", Priority: Medium})	
+	newStore.Add(Task{ID: 2, Title: "Deploy app", Priority: Medium})
 
 	// TODO: Mark the third task done via GetByID, then call printSummary
 	if found, ok := newStore.GetByID(2); ok { found.Done = true }
 	printSummary(newStore)
-	
+
 	// TODO: Delete task ID 2, print separator, call printSummary again
 	newStore.Delete(2)
 	fmt.Print("After delete — ")
@@ -331,7 +332,7 @@ func main() {
 	// -----------------------------------------------------------------------
 	// 1. Create a second store type called FilterStore that wraps a TaskStore
 	//    and adds a GetByTag(tag string) []Task method.
-	
+
 	fmt.Println("--- Part 6: Challenge ---")
 
 	// Create a FilterStore wrapping a MemoryStore
@@ -410,3 +411,4 @@ func main() {
 
 // Suppress unused import warning
 var _ = strings.Contains
+*/
